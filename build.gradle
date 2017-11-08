@@ -7,9 +7,23 @@
  * user guide available at https://docs.gradle.org/3.2.1/userguide/tutorial_java_projects.html
  */
 
+
+plugins {
+    id "org.flywaydb.flyway" version "4.2.0"
+}
+
+flyway {
+    url = 'jdbc:mysql://localhost:3306'
+    user = 'root'
+    schemas = ['ad']
+    baselineOnMigrate = true
+}
+
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'war'
+
 
 
 war.baseName = 'adportal'
@@ -70,3 +84,4 @@ sourceSets {
             }
         }
     }
+    
