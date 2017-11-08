@@ -1,0 +1,9 @@
+bin/
+build/
+.classpath
+.settings/
+.build.gradle.swo
+.gradle/
+.DS_Store
+gradlew
+gradlew.bat

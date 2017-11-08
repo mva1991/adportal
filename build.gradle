@@ -69,12 +69,18 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlets
 	compile group: 'org.eclipse.jetty', name: 'jetty-servlets', version: '9.4.7.v20170914'
 	
+	// https://mvnrepository.com/artifact/log4j/log4j
+	compile group: 'log4j', name: 'log4j', version: '1.2.17'
+
 	
 }
 
 
 war {      
     webXml = file('WebContent/WEB-INF/web.xml') 
+    from ('src/resources'){
+        include 'log4j.properties'
+    }
 }
 
 sourceSets {
@@ -84,4 +90,6 @@ sourceSets {
             }
         }
     }
+    
+    
     
