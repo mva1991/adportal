@@ -8,24 +8,19 @@ import org.apache.log4j.LogManager;
 
 public class ADLogs {
 	static final Logger logger = Logger.getLogger(ADLogs.class);
-	
 	static {
-
-
 		Enumeration<?> allLoggers = LogManager.getLoggerRepository().getCurrentLoggers();
 		while (allLoggers.hasMoreElements()) {
 			Logger tmpLogger = (Logger) allLoggers.nextElement();
 			String nm = tmpLogger.getName();
 			if (nm.startsWith("com.portal.log")) {
 				tmpLogger.setLevel(Level.DEBUG);
-
 			}
-
 		}
-	
 	}
 
-	private ADLogs() {}
+	private ADLogs() {
+	}
 
 	public static void debug(String msg) {
 		if (msg != null && !msg.isEmpty()) {
@@ -51,8 +46,8 @@ public class ADLogs {
 
 	public static void info(String msg) {
 		if (logger.isInfoEnabled() && (msg != null && !msg.isEmpty())) {
-				logger.info(msg);
-		}		
+			logger.info(msg);
+		}
 	}
 
 	public static void info(String msg, Exception e) {

@@ -24,7 +24,7 @@ public class DBHelper {
 	  public static Connection getConnection() throws  SQLException, PortalException, ClassNotFoundException 
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		String connectionUrl = "jdbc:mysql://localhost:3306/ad?useUnicode=true&characterEncoding=UTF-8&user=root&password=";
+		String connectionUrl = "jdbc:mysql://localhost:3306/ad?useUnicode=true&characterEncoding=UTF-8&user=aduser&password=StrangerThings";
 		Connection conn = DriverManager.getConnection(connectionUrl);
 		return conn;
 

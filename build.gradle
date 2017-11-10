@@ -13,8 +13,9 @@ plugins {
 }
 
 flyway {
-    url = 'jdbc:mysql://localhost:3306'
-    user = 'root'
+    url = 'jdbc:mysql://34.234.220.142:3306'
+    user = 'adadmin'
+    password = 'StrangerThings'
     schemas = ['ad']
     baselineOnMigrate = true
 }
@@ -23,7 +24,7 @@ flyway {
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'war'
-
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 
 war.baseName = 'adportal'
